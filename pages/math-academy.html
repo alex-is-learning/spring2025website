@@ -1,0 +1,43 @@
+---
+layout: default
+title: Math Academy
+---
+<h1>Math Academy</h1>
+<p>Math academy is a miracle, I'm super super excited about it.</p>
+<p>Will write more later...</p>
+
+<div class="beeminder-goal-section">
+  <h2>Math Academy Progress</h2>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dataFilePath = '../assets/data/beeminder_goals_data.json';
+    const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+    const slug = "thinking--maths";
+    const hoursElementId = `beeminder-hours-${slug}`;
+    const hoursDisplayElement = document.getElementById(hoursElementId);
+    fetch(cacheBustUrl)
+      .then(response => response.json())
+      .then(allGoalData => {
+        if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+          const goalData = allGoalData[slug];
+          if (hoursDisplayElement && goalData.current_value !== undefined) {
+            hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+          } else if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = 'N/A';
+          }
+        } else {
+          if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+          }
+        }
+      })
+      .catch(error => {
+        if (hoursDisplayElement) {
+          hoursDisplayElement.textContent = 'Error';
+        }
+      });
+  });
+</script>

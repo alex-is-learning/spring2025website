@@ -12,67 +12,37 @@ title: Home
   <a href="https://github.com/alex-is-learning/alex-is-learning.github.io" target="_blank">Site Code</a>
 </div>
 <h1>Hello, I'm Alex</h1>
-<div class="image-matrix-wrapper">
-  <img src="images/me%20in%20the%20matrix%20hehehe.png" alt="Alex in the Matrix" class="matrix-img-dark">
-  <img src="images/light%20mode.png" alt="Alex in Light Mode" class="matrix-img-light">
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  <img id="profile-pic" src="{{ '/images/profile-pic-pixel.png' | relative_url }}" alt="Alex profile picture" style="max-height: 200px; border-radius: 8px; display: block;">
 </div>
 <script>
-  function updateMatrixImage() {
-    const isLight = document.body.classList.contains('light-mode');
-    document.querySelector('.matrix-img-dark').style.display = isLight ? 'none' : 'block';
-    document.querySelector('.matrix-img-light').style.display = isLight ? 'block' : 'none';
-  }
-  document.addEventListener('DOMContentLoaded', updateMatrixImage);
-  document.getElementById('mode-toggle').addEventListener('click', function() {
-    setTimeout(updateMatrixImage, 0);
+  const profilePic = document.getElementById('profile-pic');
+  const pixelSrc = profilePic.src;
+  const normalSrc = "{{ '/images/profile-pic.jpg' | relative_url }}";
+  profilePic.addEventListener('mouseover', () => {
+    profilePic.src = normalSrc;
+  });
+  profilePic.addEventListener('mouseout', () => {
+    profilePic.src = pixelSrc;
   });
 </script>
-<p>I'm a 28 year old from England, currently job hunting in the Effective Altruism space, and learning as much as I can (because it's fun as hell).</p>
-<h2>Below are my 6 strategic priorities</h2>
-<nav>
-  <a href="{{ '/pages/improve-impact.html' | relative_url }}">1. Improve Impact</a><br>
-  <a href="{{ '/pages/improve-thinking.html' | relative_url }}">2. Improve Thinking</a><br>
-  <a href="{{ '/pages/improve-systems.html' | relative_url }}">3. Improve Systems</a><br>
-  <a href="{{ '/pages/improve-friendships.html' | relative_url }}">4. Improve Friendships</a><br>
-  <a href="{{ '/pages/improve-health.html' | relative_url }}">5. Improve Health</a><br>
-  <a href="{{ '/pages/improve-wellbeing.html' | relative_url }}">6. Improve Wellbeing</a>
-</nav>
-<h2>And here's some other stuff</h2>
+<p>I'm a 28 year old Effective Altruist/Post-Rationalist hybrid (lol) from England.</p>
+
+<h2>Top Priorities (June 2025)</h2>
+<ol>
+  <li><a href="{{ '/pages/job-hunting.html' | relative_url }}">Job hunting</a></li>
+  <li><a href="{{ '/pages/open-research-institute.html' | relative_url }}">Learning to think</a></li>
+  <li><a href="{{ '/pages/math-academy.html' | relative_url }}">Math academy</a></li>
+</ol>
+
+<h2>Secondary/other</h2>
 <ul>
-  <li><a href="{{ '/learning-log/' | relative_url }}">Learning log</a>!!! 😎 (making what I'm learning about more legible)</li>
-  <li><a href="https://www.alexislearning.me/learning-to-think/" target="_blank">My open notebook</a> for "learning how to think", 
-    <ul style="margin-top:4px;margin-bottom:4px;margin-left:24px;">
-      <li>(I am now a member of the Open Research Institute!)</li>
-    </ul>
-  </li>
-  <li><a href="https://alexislearning.substack.com/p/consensus-ism-part-2" target="_blank">My best Substack post (Deep Okayness )</a></li>
-  <li><a href="https://docs.google.com/presentation/d/1GORGyGXHnXKg16J26YqxxMr8TqTzxxVzUcpJZWUAxuI/edit?slide=id.p#slide=id.p">My guide to tpot</a> (slide deck from Jan 2024)</li>
+  <li><a href="{{ '/pages/blog-posts/' | relative_url }}">Scrappy ~daily blog posts</a></li>
+</ul>
+
+<h2>Archive</h2>
+<ul>
   <li><a href="{{ '/pages/favourites.html' | relative_url }}">My favourite things</a></li>
+  <li><a href="{{ '/learning-log/' | relative_url }}">Learning log (replaced with learning handbook website)</a></li>
+  <li><a href="{{ '/pages/old-home.html' | relative_url }}">Old home page</a></li>
 </ul>
-<hr>
-<h2>Scrappy daily blog posts</h2>
-{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-<ul class="post-list">
-  {% assign total_posts = sorted_posts | size %}
-  {% for post in sorted_posts %}
-    {% assign post_number = total_posts | minus: forloop.index0 %}
-    {% assign padded_number = post_number | prepend: '00' | slice: -3, 3 %}
-    <li>
-      <a href="{{ post.url | relative_url }}">
-        {{ padded_number }}. {{ post.title }}
-      </a>
-      <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-    </li>
-  {% endfor %}
-</ul>
-{% if sorted_posts == empty %}
-  <li><em>No blog posts yet. Stay tuned!</em></li>
-{% endif %}
-<hr>
-<p style="color:#00ff00;font-size:0.9em;margin-top:32px;">
-  Last updated: <span id="last-updated"></span>
-</p>
-<script>
-  document.getElementById('last-updated').textContent =
-    new Date(document.lastModified).toLocaleDateString();
-</script>

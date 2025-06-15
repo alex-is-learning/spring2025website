@@ -1,0 +1,65 @@
+---
+layout: default
+title: Open Research Institute
+---
+<h1>Learning to think</h1>
+<p>As per:</p>
+<p><a href="{{ '/learning-how-to-think/' | relative_url }}">Learning to think the Defender of Basic way (blog post)</a></p>
+<p>I'm now doing a whole bunch of learning and documenting the process on my new "learning in public" handbook.</p>
+<p>Here's <a href="https://www.alexislearning.me/learning-to-think/" target="_blank">the website!</a></p>
+<h2>Relevant Beeminders:</h2>
+
+<div class="beeminder-goal-section">
+  <h3>Daily Predictions</h3>
+  <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+<div class="beeminder-goal-section">
+  <h3>Improving My World Model</h3>
+  <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
+  <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dataFilePath = '../assets/data/beeminder_goals_data.json';
+    const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+    const goalSlugs = [
+      "thinking--prediction",
+      "thinking--wrld-model"
+    ];
+    fetch(cacheBustUrl)
+      .then(response => response.json())
+      .then(allGoalData => {
+        goalSlugs.forEach(slug => {
+          const hoursElementId = `beeminder-hours-${slug}`;
+          const hoursDisplayElement = document.getElementById(hoursElementId);
+          if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+            const goalData = allGoalData[slug];
+            if (hoursDisplayElement && goalData.current_value !== undefined) {
+              if (slug === "thinking--prediction") {
+                hoursDisplayElement.textContent = Math.round(goalData.current_value);
+              } else {
+                hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+              }
+            } else if (hoursDisplayElement) {
+              hoursDisplayElement.textContent = 'N/A';
+            }
+          } else {
+            if (hoursDisplayElement) {
+              hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+            }
+          }
+        });
+      })
+      .catch(error => {
+        goalSlugs.forEach(slug => {
+          const hoursElementId = `beeminder-hours-${slug}`;
+          const hoursDisplayElement = document.getElementById(hoursElementId);
+          if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = 'Error';
+          }
+        });
+      });
+  });
+</script>
