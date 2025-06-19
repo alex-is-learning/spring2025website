@@ -35,6 +35,102 @@ title: Home
   <li><a href="{{ '/pages/math-academy.html' | relative_url }}">Math academy</a></li>
 </ol>
 
+<style>
+.beeminder-goals-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  overflow-x: auto;
+}
+.beeminder-goal-section {
+  min-width: 210px;
+  max-width: 240px;
+  flex: 1 1 0;
+  font-size: 0.95em;
+}
+.beeminder-goal-section h4 {
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+.beeminder-goal-section p {
+  font-size: 0.98em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.beeminder-goal-section iframe {
+  width: 230px;
+  height: 140px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+</style>
+<div class="beeminder-goals-flex">
+  <div class="beeminder-goal-section">
+    <h4>Improving My World Model</h4>
+    <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h4>Daily Predictions</h4>
+    <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h4>Math Academy Progress</h4>
+    <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
+    <br>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning"></iframe>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dataFilePath = 'assets/data/beeminder_goals_data.json';
+    const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+    const goalSlugs = [
+      "thinking--wrld-model",
+      "thinking--prediction",
+      "thinking--maths"
+    ];
+    fetch(cacheBustUrl)
+      .then(response => response.json())
+      .then(allGoalData => {
+        goalSlugs.forEach(slug => {
+          const hoursElementId = `beeminder-hours-${slug}`;
+          const hoursDisplayElement = document.getElementById(hoursElementId);
+          if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+            const goalData = allGoalData[slug];
+            if (hoursDisplayElement && goalData.current_value !== undefined) {
+              if (slug === "thinking--prediction") {
+                hoursDisplayElement.textContent = Math.round(goalData.current_value);
+              } else {
+                hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+              }
+            } else if (hoursDisplayElement) {
+              hoursDisplayElement.textContent = 'N/A';
+            }
+          } else {
+            if (hoursDisplayElement) {
+              hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+            }
+          }
+        });
+      })
+      .catch(error => {
+        goalSlugs.forEach(slug => {
+          const hoursElementId = `beeminder-hours-${slug}`;
+          const hoursDisplayElement = document.getElementById(hoursElementId);
+          if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = 'Error';
+          }
+        });
+      });
+  });
+</script>
+
 <h2>Secondary/other</h2>
 <ul>
   <li><a href="{{ '/pages/blog-posts/' | relative_url }}">Scrappy ~daily blog posts</a>
