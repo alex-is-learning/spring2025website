@@ -62,28 +62,30 @@ title: Home
 }
 .beeminder-goal-section iframe {
   width: 230px;
-  height: 140px;
+  height: 160px;
   display: block;
   margin: 0 auto;
   border: none;
+  overflow: hidden;
+  scrollbar-width: none;
 }
 </style>
 <div class="beeminder-goals-flex">
   <div class="beeminder-goal-section">
     <h4>Improving My World Model</h4>
     <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
-    <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning"></iframe>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" scrolling="no"></iframe>
   </div>
   <div class="beeminder-goal-section">
     <h4>Daily Predictions</h4>
     <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
-    <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning"></iframe>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" scrolling="no"></iframe>
   </div>
   <div class="beeminder-goal-section">
     <h4>Math Academy Progress</h4>
     <p>Cumulative hours: <span id="beeminder-hours-thinking--maths">Loading...</span></p>
     <br>
-    <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning"></iframe>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--maths&username=alexislearning" scrolling="no"></iframe>
   </div>
 </div>
 <script>
