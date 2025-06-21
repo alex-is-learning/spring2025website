@@ -1,0 +1,146 @@
+---
+layout: default
+title: Other Tracked Goals
+---
+
+<h1>Health</h1>
+<div class="beeminder-goals-grid">
+  <div class="beeminder-goal-section">
+    <h3>Daily Stretching</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-health--stretching">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=health--stretching&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h3>Weight Training</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-health--weights">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=health--weights&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h3>Jump Rope</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-heath--jump-rope">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=heath--jump-rope&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h3>Steps</h3>
+    <p>Goal is 8k a day. Before making this goal I was averaging 3k a day 😅</p>
+    <iframe src="https://www.beeminder.com/widget?slug=health--steps&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+</div>
+
+<h1>Wellbeing</h1>
+<div class="beeminder-goals-grid">
+  <div class="beeminder-goal-section">
+    <h3>Meditation Practice</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-wellbeing--meditatio">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=wellbeing--meditatio&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h3>Alexander Technique</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-wellbeing--alex-tech">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=wellbeing--alex-tech&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+</div>
+
+<h1>Some archived/completed beeminders</h1>
+<div class="archived-beeminders-list" style="display: flex; flex-direction: column; gap: 40px; margin-bottom: 2em;">
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-ai-safety.png' | relative_url }}" alt="AI Safety Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p><Front-loaded learning about AI safety. Primarily involved reading the "Introduction to AI Safety, Society and Ethics" (ASES) textbook.</p>
+  </div>
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-boyd.png' | relative_url }}" alt="Boyd Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p>Big John Boyd deep dive! Started with the biography by Robert Coram, then read Frans Osinga's much more in-depth book. Would love to spend another ~50 hours on this, but had to deprioritise. Super super generative though.</p>
+  </div>
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-heidegger.png' | relative_url }}" alt="Heidegger Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p>Really great stuff re: refuting the mind-body split, embodiment, I am therefore I think (not the other way round), etc. Again, deprioritised for now, but will be returning for sure.</p>
+  </div>
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-self-explan.png' | relative_url }}" alt="Self-Explanation Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p>This is just robustly a habit now. I got on walks and talk to myself about what I've been learning (and sometimes I talk to ChatGPT/Gemini via my airpods to get quizzed as I walk. Great way to uncover things you don't understand.</p>
+  </div>
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-vim.png' | relative_url }}" alt="Vim Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p>Front-loaded learning Vim bindings for more pleasant (and fun!) writing experience. I now use Vim bindings in Obsidian and Visual Studio Code, like a nerd.</div>p>
+  </div>
+  <div class="archived-beeminder">
+    <img src="{{ '/images/archived-beeminders/archive-weight.png' | relative_url }}" alt="Weight Beeminder" style="width:100%; max-width:600px; display:block; margin:0 auto 12px auto;">
+    <p>This is really old - I rediscovered it as I was making this page and just thought it was cool as hell.</p>
+  </div>
+</div>
+
+<style>
+.beeminder-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 2em;
+}
+.beeminder-goal-section {
+  min-width: 210px;
+  max-width: 240px;
+  font-size: 0.95em;
+}
+.beeminder-goal-section h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+.beeminder-goal-section p {
+  font-size: 0.98em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.beeminder-goal-section iframe {
+  width: 230px;
+  height: 160px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dataFilePath = '../assets/data/beeminder_goals_data.json';
+  const cacheBustUrl = dataFilePath + '?t=' + new Date().getTime();
+  const healthPageGoalSlugs = [
+    "health--stretching",
+    "health--weights",
+    "heath--jump-rope",
+    "health--steps",
+    "wellbeing--meditatio",
+    "wellbeing--alex-tech"
+  ];
+  fetch(cacheBustUrl)
+    .then(response => response.json())
+    .then(allGoalData => {
+      healthPageGoalSlugs.forEach(slug => {
+        const hoursElementId = `beeminder-hours-${slug}`;
+        const hoursDisplayElement = document.getElementById(hoursElementId);
+        if (allGoalData[slug] && allGoalData[slug].error === undefined) {
+          const goalData = allGoalData[slug];
+          if (hoursDisplayElement && goalData.current_value !== undefined) {
+            hoursDisplayElement.textContent = parseFloat(goalData.current_value).toFixed(2);
+          } else if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = 'N/A';
+          }
+        } else {
+          if (hoursDisplayElement) {
+            hoursDisplayElement.textContent = (allGoalData[slug] && allGoalData[slug].error) ? 'Error' : 'N/A';
+          }
+        }
+      });
+    })
+    .catch(error => {
+      healthPageGoalSlugs.forEach(slug => {
+        const hoursElementId = `beeminder-hours-${slug}`;
+        const hoursDisplayElement = document.getElementById(hoursElementId);
+        if (hoursDisplayElement) {
+          hoursDisplayElement.textContent = 'Error';
+        }
+      });
+    });
+});
+</script>
+
