@@ -10,16 +10,48 @@ title: Learning to Think
 <p>I'm now doing a whole bunch of learning and documenting the process on my new "learning in public" handbook.</p>
 <p>Here's <a href="https://www.alexislearning.me/learning-to-think/" target="_blank">the website!</a></p>
 <h2>Relevant Beeminders:</h2>
-
-<div class="beeminder-goal-section">
-  <h3>Daily Predictions</h3>
-  <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
-  <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
-</div>
-<div class="beeminder-goal-section">
-  <h3>Improving My World Model</h3>
-  <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
-  <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+<style>
+.beeminder-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 2em;
+}
+.beeminder-goal-section {
+  min-width: 210px;
+  max-width: 240px;
+  font-size: 0.95em;
+}
+.beeminder-goal-section h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+.beeminder-goal-section p {
+  font-size: 0.98em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.beeminder-goal-section iframe {
+  width: 230px;
+  height: 160px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+</style>
+<div class="beeminder-goals-grid">
+  <div class="beeminder-goal-section">
+    <h3>Daily Predictions</h3>
+    <p>Cumulative predictions: <span id="beeminder-hours-thinking--prediction">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--prediction&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
+  <div class="beeminder-goal-section">
+    <h3>Improving My World Model</h3>
+    <p>Cumulative hours: <span id="beeminder-hours-thinking--wrld-model">Loading...</span></p>
+    <iframe src="https://www.beeminder.com/widget?slug=thinking--wrld-model&username=alexislearning" height="185px" width="230px" frameborder="0px"></iframe>
+  </div>
 </div>
 
 <script>
