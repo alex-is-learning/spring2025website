@@ -38,12 +38,12 @@ title: Home
 <style>
 .beeminder-goals-flex {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 16px;
   justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 2em;
-  overflow-x: auto;
+  overflow-x: visible;
 }
 .beeminder-goal-section {
   min-width: 210px;
@@ -148,11 +148,14 @@ title: Home
       {% endfor %}
     </ul>
   </li>
+  <li><a href="https://alexislearning.substack.com/p/consensus-ism-part-2" target="_blank">My best Substack post (Deep Okayness )</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1GORGyGXHnXKg16J26YqxxMr8TqTzxxVzUcpJZWUAxuI/edit?slide=id.p#slide=id.p">My guide to tpot</a> (slide deck from Jan 2024)</li>
+  <li><a href="{{ '/pages/favourites.html' | relative_url }}">My favourite things</a></li>
+  <li><a href="https://www.alexislearning.me/learning-blog-2021/" target="_blank">Teaching You How To Learn</a> - 2021 learning guide</li>
 </ul>
 
 <h2>Archive</h2>
 <ul>
-  <li><a href="{{ '/pages/favourites.html' | relative_url }}">My favourite things</a></li>
   <li><a href="{{ '/learning-log/' | relative_url }}">Learning log</a> (replaced with <a href="https://www.alexislearning.me/learning-to-think/">"Learning to Think" website</a>)</li>
   <li><a href="{{ '/pages/old-home.html' | relative_url }}">Old home page</a></li>
 </ul>
