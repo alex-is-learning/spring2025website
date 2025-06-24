@@ -62,7 +62,13 @@ layout: default  # This tells Jekyll to first wrap this content in your default.
       </li>
     </ul>
   </nav>
+  <div style="margin-top: 24px; text-align: center;">
+    <a href="{{ '/pages/blog-posts/' | relative_url }}" style="color: #228B22; font-size: 1.05em; text-decoration: underline;">&#128214; View all blog posts</a>
+  </div>
   <div style="margin-top: 48px; text-align: center;">
-    <a href="{{ '/' | relative_url }}" style="color: #00ff00; font-size: 1.1em; text-decoration: underline;">&#8962; Back to Home</a>
+    <a href="{{ '/' | relative_url }}" style="color: #228B22; font-size: 1.1em; text-decoration: underline;">&#8962; Back to Home</a>
+  </div>
+  <div style="margin-top: 24px; text-align: left; color: #228B22; font-family: inherit; font-size: 1em;">
+    Last updated: {{ page.last_modified_at | default: page.date | date: '%Y-%m-%d' }}
   </div>
 </article>
