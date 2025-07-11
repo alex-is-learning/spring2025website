@@ -2,118 +2,118 @@
     "systems--vim": {
         "current_value": 11.711666666666668,
         "goal_title": "Interacting with computers at the level of an \"expert\" - feels great, very satisfying, etc",
-        "last_updated_utc": "2025-07-10T01:43:47.060085Z"
+        "last_updated_utc": "2025-07-11T01:45:00.060301Z"
     },
     "thinking--self-expla": {
         "current_value": 6.939722222222221,
         "goal_title": "Explaining what you're learning out-loud to yourself (or to an AI) is an effective way to learn (Michelene Chi's \"self-explanation effect\")",
-        "last_updated_utc": "2025-07-10T01:43:47.595387Z"
+        "last_updated_utc": "2025-07-11T01:45:00.468614Z"
     },
     "health--stretching": {
         "current_value": 12.313333333333333,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:48.209371Z"
+        "last_updated_utc": "2025-07-11T01:45:00.816333Z"
     },
     "systems--touch-typ": {
-        "current_value": 3.3747222222222226,
+        "current_value": 3.4172222222222226,
         "goal_title": "Deliberate practice to reduce errors and learn symbols",
-        "last_updated_utc": "2025-07-10T01:43:48.805919Z"
+        "last_updated_utc": "2025-07-11T01:45:01.221611Z"
     },
     "thinking--maths": {
         "current_value": 21.08777777777778,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:49.341151Z"
+        "last_updated_utc": "2025-07-11T01:45:01.602769Z"
     },
     "wellbeing--meditatio": {
         "current_value": 14.874444444444443,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:49.878643Z"
+        "last_updated_utc": "2025-07-11T01:45:01.961384Z"
     },
     "wellbeing--alex-tech": {
         "current_value": 5.12111111111111,
         "goal_title": "Learning to expand my awareness and reliably enter a flow-y state of non-doing",
-        "last_updated_utc": "2025-07-10T01:43:50.500870Z"
+        "last_updated_utc": "2025-07-11T01:45:02.318357Z"
     },
     "thinking--prediction": {
-        "current_value": 465,
+        "current_value": 470,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:51.071557Z"
+        "last_updated_utc": "2025-07-11T01:45:02.658163Z"
     },
     "thinking--vervaeke": {
         "current_value": 6.970833333333333,
         "goal_title": "Returning to Vervaeke's \"Awakening from the Meaning Crisis\" for careful study",
-        "last_updated_utc": "2025-07-10T01:43:51.613122Z"
+        "last_updated_utc": "2025-07-11T01:45:03.050634Z"
     },
     "thinking--boyd": {
         "current_value": 45.53666666666667,
         "goal_title": "Learning from the best strategist from the 20th century, and the first postmodern strategist",
-        "last_updated_utc": "2025-07-10T01:43:52.205016Z"
+        "last_updated_utc": "2025-07-11T01:45:03.402226Z"
     },
     "thinking--blogs": {
         "current_value": 16.463333333333335,
         "goal_title": "Nice intellectual serendipity engine",
-        "last_updated_utc": "2025-07-10T01:43:52.776907Z"
+        "last_updated_utc": "2025-07-11T01:45:03.767088Z"
     },
     "thinking--matuschak": {
         "current_value": 2.6177777777777775,
         "goal_title": "I want to interact with his Patreon, read a bunch of his stuff, watch his videos etc. Cutting edge!",
-        "last_updated_utc": "2025-07-10T01:43:53.293977Z"
+        "last_updated_utc": "2025-07-11T01:45:04.181348Z"
     },
     "impact--publc-wrtng": {
         "current_value": 6.442500000000001,
         "goal_title": "Posting to Substack \u2192 important to output my learnings to make sure I grok things and go from diverge to converge",
-        "last_updated_utc": "2025-07-10T01:43:53.812116Z"
+        "last_updated_utc": "2025-07-11T01:45:04.531617Z"
     },
     "thinking--wrld-model": {
         "current_value": 31.364722222222216,
         "goal_title": "An intentional project to improve my model of the world",
-        "last_updated_utc": "2025-07-10T01:43:54.334068Z"
+        "last_updated_utc": "2025-07-11T01:45:04.887065Z"
     },
     "impact--ai-safety": {
         "current_value": 35.95916666666667,
         "goal_title": "Learning about the AI safety field",
-        "last_updated_utc": "2025-07-10T01:43:54.878480Z"
+        "last_updated_utc": "2025-07-11T01:45:05.305193Z"
     },
     "thinking--exprt-stdy": {
         "current_value": 20.07222222222222,
         "goal_title": "Learning how to learn from experts, and learning how to efficiently become an expert",
-        "last_updated_utc": "2025-07-10T01:43:55.406691Z"
+        "last_updated_utc": "2025-07-11T01:45:05.715506Z"
     },
     "thinking--heidegger": {
         "current_value": 12.603055555555553,
         "goal_title": "I have a strong sense that deep grokking of Heidegger could be transformational",
-        "last_updated_utc": "2025-07-10T01:43:55.956734Z"
+        "last_updated_utc": "2025-07-11T01:45:06.126598Z"
     },
     "health--weights": {
-        "current_value": 4.656111111111111,
+        "current_value": 4.759444444444444,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:56.454276Z"
+        "last_updated_utc": "2025-07-11T01:45:06.492010Z"
     },
     "heath--jump-rope": {
-        "current_value": 2.651111111111111,
+        "current_value": 2.723611111111111,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:56.987455Z"
+        "last_updated_utc": "2025-07-11T01:45:06.881009Z"
     },
     "impact--blog-post": {
         "current_value": 91,
         "goal_title": "Daily blog post",
-        "last_updated_utc": "2025-07-10T01:43:57.547032Z",
+        "last_updated_utc": "2025-07-11T01:45:07.254521Z",
         "average_daily": 2.935483870967742
     },
     "health--steps": {
-        "current_value": 399977,
+        "current_value": 417732,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:43:58.656348Z",
-        "average_daily": 9999.425
+        "last_updated_utc": "2025-07-11T01:45:08.037601Z",
+        "average_daily": 10188.585365853658
     },
     "impact--operations": {
         "error": "404 Client Error: Not Found for url: https://www.beeminder.com/api/v1/users/alexislearning/goals/impact--operations.json?auth_token=ey56Af2shn-Jnhy_es1z",
-        "last_updated_utc": "2025-07-10T01:43:59.866500Z"
+        "last_updated_utc": "2025-07-11T01:45:08.956956Z"
     },
     "impact--systems-thi": {
         "current_value": 4.355,
         "goal_title": "",
-        "last_updated_utc": "2025-07-10T01:44:00.405481Z",
+        "last_updated_utc": "2025-07-11T01:45:09.324091Z",
         "average_daily": 0.8709999999999999
     }
 }
