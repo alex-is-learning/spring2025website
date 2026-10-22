@@ -107,7 +107,7 @@
         "average_daily": 10314.149253731342
     },
     "impact--operations": {
-        "error": "404 Client Error: Not Found for url: https://www.beeminder.com/api/v1/users/alexislearning/goals/impact--operations.json?auth_token=ey56Af2shn-Jnhy_es1z",
+        "error": "404 Client Error: Not Found for url: https://www.beeminder.com/api/v1/users/alexislearning/goals/impact--operations.json?auth_token=REDACTED",
         "last_updated_utc": "2025-09-14T01:28:38.707064Z"
     },
     "impact--systems-thi": {
